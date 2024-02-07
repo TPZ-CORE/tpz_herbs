@@ -27,7 +27,8 @@ Citizen.CreateThread(function()
 						print("0: looterId: "..eventDataStruct:GetInt32(0))
 						print("1: lootedEntityId: "..eventDataStruct:GetInt32(8))
 						print("2: isLootSuccess: "..eventDataStruct:GetInt32(16))
-     end
-end
+         end
+        end
+   end
 end)
       
