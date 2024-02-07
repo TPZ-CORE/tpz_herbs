@@ -17,7 +17,7 @@ while true do
 
                     if isLootSuccess and PlayerPedId() == looterId then 
                        local model = GetEntityModel(lootedEntityId)
-                       print(model)
+                       print(model) -- check for lootable herbs if equals to the model to give rewards
                     end
                 end
 	     end
