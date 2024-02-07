@@ -13,7 +13,6 @@ while true do
                      
                     local lootedEntityId = view['1']
                     local isLootSuccess  = view['2']
-										end
                 end
 	     end
          end
