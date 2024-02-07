@@ -10,19 +10,13 @@ Citizen.CreateThread(function()
 
 				if eventAtIndex == joaat("EVENT_LOOT_COMPLETE") then   -- if eventAtIndex == GetHashKey("EVENT_LOOT_COMPLETE")
 
-					local eventDataSize = 3 -- for EVENT_LOOT_COMPLETE data size is 3. Check table below.
+					local view = exports["tpz_herbs"]:DataViewNativeGetEventData(0, index, 3)
+                    
+                
+                    local lootedEntityId         = view['1']
+                    local isLootSuccess         = view['2']
 
-					local eventDataStruct = DataView.ArrayBuffer(128) -- buffer must be 8*eventDataSize or bigger
-					eventDataStruct:SetInt32(0 ,0)		 	-- 8*0 offset for 0 element of eventData
-					eventDataStruct:SetInt32(8 ,0)    	  	-- 8*1 offset for 1 element of eventData
-					eventDataStruct:SetInt32(16 ,0)			-- 8*2 offset for 2 element of eventData
-
-					local is_data_exists = Citizen.InvokeNative(0x57EC5FA4D4D6AFCA,0,i,eventDataStruct:Buffer(),eventDataSize)	-- GET_EVENT_DATA
-
-					if is_data_exists then
-						print("0: looterId: "..eventDataStruct:GetInt32(0))
-						print("1: lootedEntityId: "..eventDataStruct:GetInt32(8))
-						print("2: isLootSuccess: "..eventDataStruct:GetInt32(16))
+                    
 														end
         end
    end
