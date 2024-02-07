@@ -24,8 +24,10 @@ Citizen.CreateThread(function()
 					local is_data_exists = Citizen.InvokeNative(0x57EC5FA4D4D6AFCA,0,i,eventDataStruct:Buffer(),eventDataSize)	-- GET_EVENT_DATA
 
 					if is_data_exists then
-						print("0: CarriableEntityId: "..eventDataStruct:GetInt32(0))
-						print("1: PerpitratorEntityId: "..eventDataStruct:GetInt32(8))
-						print("2: CarrierEntityId: "..eventDataStruct:GetInt32(16))
-                    end
+						print("0: looterId: "..eventDataStruct:GetInt32(0))
+						print("1: lootedEntityId: "..eventDataStruct:GetInt32(8))
+						print("2: isLootSuccess: "..eventDataStruct:GetInt32(16))
+     end
+end
+end)
       
