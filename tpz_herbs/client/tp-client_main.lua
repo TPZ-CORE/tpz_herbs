@@ -17,6 +17,7 @@ while true do
 
                     if isLootSuccess and PlayerPedId() == looterId then 
                        local model = GetEntityModel(lootedEntityId)
+                       print(model)
                     end
                 end
 	     end
