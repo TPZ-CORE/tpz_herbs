@@ -19,8 +19,6 @@ Citizen.CreateThread(function()
 					eventDataStruct:SetInt32(8 ,0)    	  	-- 8*1 offset for 1 element of eventData
 					eventDataStruct:SetInt32(16 ,0)			-- 8*2 offset for 2 element of eventData
 
-					-- etc +8 offset for each next element (if data size is bigger then 5)
-
 					local is_data_exists = Citizen.InvokeNative(0x57EC5FA4D4D6AFCA,0,i,eventDataStruct:Buffer(),eventDataSize)	-- GET_EVENT_DATA
 
 					if is_data_exists then
@@ -30,5 +28,6 @@ Citizen.CreateThread(function()
 														end
         end
    end
-	end)
+
+end)
       
