@@ -15,6 +15,7 @@ while true do
                     local lootedEntityId = view['1']
                     local isLootSuccess  = view['2']
 
+                    -- Ensure the player who enacted on the event is the one who must get the rewards
                     if isLootSuccess and PlayerPedId() == looterId then 
                        local model = GetEntityModel(lootedEntityId)
                        print(model) -- check for lootable herbs if equals to the model to give rewards
