@@ -11,7 +11,7 @@ while true do
 
 		    local view = exports["tpz_herbs"]:DataViewNativeGetEventData(0, index, 3)
                     
-                    local looterId.      = view['0']
+                    local looterId       = view['0']
                     local lootedEntityId = view['1']
                     local isLootSuccess  = view['2']
 
